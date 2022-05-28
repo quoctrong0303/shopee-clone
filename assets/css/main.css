@@ -1,3 +1,7 @@
+.app {
+    overflow: hidden;
+}
+
 .header {
     height: var(--header-height);
     background-image: linear-gradient(0, #ff6533, #f53e2d);
@@ -494,6 +498,12 @@
     
 }
 
+.header__mobile-search-icon {
+    font-size: 2.6rem;
+    color: var(--white-color);
+}
+
+
 .header__logo {
     width: 200px;
 }
@@ -511,6 +521,11 @@
     align-items: center;
     
 }
+
+.header___search-checkbox:checked ~ .header__search { 
+    display: flex;
+}
+
 /* Header sort bar */
 .header__sort-bar {
     position: fixed;
@@ -567,11 +582,16 @@
     width: 150px;
 }
 
+.header__logo-link {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .header__cart-wrap {
     position: relative;
     display: inline-block;
     padding: 0 8px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-wrap:hover .header__cart-list {
@@ -1002,6 +1022,66 @@
     color: var(--primary-color);
 }
 
+/* Mobile category */
+
+.mobile-category {
+
+}
+
+.mobile-category__list{ 
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.mobile-category__list::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-category__item{ 
+    flex-shrink: 0;
+    margin-right: 10px;
+
+}
+
+
+.mobile-category__item:nth-of-type(3n + 1) .mobile-category__link {
+    background-color: #87afd8;
+}
+
+.mobile-category__item:nth-of-type(3n + 2 ) .mobile-category__link {
+    background-color: #76c9bd;
+}
+
+.mobile-category__item:nth-of-type(3n + 3) .mobile-category__link {
+    background-color: #88cf81;
+}
+
+.mobile-category__link{ 
+    --line-height: 2rem;
+    text-decoration: none;
+    color: var(--white-color);
+    width: 110px;
+    font-size: 1.4rem;
+    line-height: var(--line-height);
+    height: calc(var(--line-height)*2);
+    text-align: center;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    border-radius: 4px;
+    font-weight: 400;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    padding: 0 6px;
+}
+
+
 /* Sort + filter */
 
 .home-filter {
@@ -1289,6 +1369,7 @@
 .home-product__pagination {
     margin-top: 48px;
     margin-bottom: 32px;
+    padding-left: 0;
 }
 
 
